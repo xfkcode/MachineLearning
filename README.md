@@ -6,3 +6,4 @@
 ## 🧰python工具箱
 1. [NumPy](https://github.com/xfkcode/MachineLearning/tree/main/python%E5%B7%A5%E5%85%B7/NumPy)
 2. [Pands](https://github.com/xfkcode/MachineLearning/tree/main/python%E5%B7%A5%E5%85%B7/Pandas)
+3. [Python3](https://github.com/xfkcode/MachineLearning/tree/main/python%E5%B7%A5%E5%85%B7/Python3)
