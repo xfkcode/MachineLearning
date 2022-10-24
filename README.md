@@ -8,3 +8,4 @@
 - [Python3](https://github.com/xfkcode/MachineLearning/tree/main/python%E5%B7%A5%E5%85%B7/Python3)
 - [NumPy](https://github.com/xfkcode/MachineLearning/tree/main/python%E5%B7%A5%E5%85%B7/NumPy)
 - [Pands](https://github.com/xfkcode/MachineLearning/tree/main/python%E5%B7%A5%E5%85%B7/Pandas)
+- [sklearn](https://github.com/xfkcode/MachineLearning/tree/main/python%E5%B7%A5%E5%85%B7/sklearn)
