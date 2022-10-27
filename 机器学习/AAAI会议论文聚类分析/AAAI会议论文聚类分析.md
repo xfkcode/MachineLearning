@@ -67,7 +67,8 @@
 - **数据集**："./data/" 📂路径下 *[UCI] AAAI-14 Accepted Papers - Papers.csv* 📝文件  
   包含总共 ***398*** 条数据样本💾  
   每条样本包含 ***6*** 个特征🌵：  
-  - *title，authors，groups，keywords，topics，abstract*
+  - *title，authors，groups，keywords，topics，abstract*  
+  [***dataDownload*****链接**](https://github.com/xfkcode/MachineLearning/tree/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAI%E4%BC%9A%E8%AE%AE%E8%AE%BA%E6%96%87%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/data)👈
 ```python
 data_df = pd.read_csv('./data/[UCI] AAAI-14 Accepted Papers - Papers.csv') # 读入csv文件为pandas的DataFrame
 data_df.head(3) # 显示前三条数据
