@@ -1,11 +1,11 @@
 # AAAI会议论文聚类分析⭐
-***AAAI会议论文***
-- ***Title*** 题目📌
-- ***Authors*** 作者✍️
-- ***Groups*** 组别🗃️
-- ***Keywords*** 关键词🗝️
-- ***Topics*** 主题🏷️
-- ***Abstract*** 摘要📑  
+***AAAI*** **会议论文**  
+***Title*** 题目📌
+***Authors*** 作者✍️
+***Groups*** 组别🗄️
+***Keywords*** 关键词🗝️
+***Topics*** 主题🏷️
+***Abstract*** 摘要📑  
 ## 🗃️聚类 ***(Unsupervised Learning)***
 将相似的对象归入同一个“类” ***cluster*** **(簇)**  ，使得同一个类中的对象互相之间关联更强  
   - [x] 同一个类中的对象相似  
