@@ -41,7 +41,7 @@
   找到 $n$ 对象中的 $k$ 个类，随机确定每个类的代表对象  
   迭代：  
   - 其他所有对象根据距离最近的类中心进行类的分配
-  - <b><font color=CornflowerBlue>计算使得 $cost$ 最小的类中心</font></b>
+  - <b><font color=CornflowerBlue>计算使得 *cost* 最小的类中心</font></b>
   
   重复直到不再发生变化  
   代价函数：类内对象与类中心的平均不相似度
