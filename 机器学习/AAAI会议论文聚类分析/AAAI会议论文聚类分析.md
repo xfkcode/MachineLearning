@@ -9,20 +9,20 @@
 ## 🗃️聚类 ***(Unsupervised Learning)***
 将相似的对象归入同一个“类” ***cluster*** **(簇)**  ，使得同一个类中的对象互相之间关联更强  
   - [x] 同一个类中的对象相似  
-  **簇/类内** *(intra-cluster)* **相似度大，距离小**
+  **簇/类内** *(intra-cluster)* **相似度大，📐距离小**
   - [x] 不同类中的对象有明显差异  
-  **簇/类间** *(inter-cluster)* **相似度小，距离大**
+  **簇/类间** *(inter-cluster)* **相似度小，📐距离大**
 
 #### 🧩聚类的类型🧩  
 - 软聚类 & 硬聚类
   - 软：同一个对象可以属于不同类
   - 硬：同一个对象只能属于一个类
 - 层次聚类 & 非层次聚类
-  - 层次：*tree* 结构
+  - 层次：*Tree* 🌲结构
     - 凝聚式层次聚类 ***(Agglomerative)***  
-      bottom-up 自底向上合并
+      ***Bottom-up*** 自底向上合并🔺
     - 分列式层次聚类 ***(Divisive)***  
-      top-down 自顶向下分裂
+      ***Top-down*** 自顶向下分裂🔻
   - 非层次： 只有一层 *flat*  
     - ***K-means*** 聚类
     - ***K-medoids*** 聚类
@@ -39,7 +39,7 @@
    3. 更新中心  
       计算新的类中心
       $$g_j=\frac{1}{n}\sum_{u_i\in j^{th}cluster}{u_i}$$
-        ***Repeat 2&3***
+        ♻️ ***Repeat 2&3***
 ## 🕹️***K-medoids***
 用 <b><font color=HotPink>最靠近类中心的对象</font></b> 作为类的参考点  
 而不是类的均值 ***(K-means)***
