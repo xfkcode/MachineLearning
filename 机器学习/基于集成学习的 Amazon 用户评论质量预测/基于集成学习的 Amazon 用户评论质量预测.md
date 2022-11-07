@@ -96,7 +96,7 @@ $w_i$ 对应 $a_i$ 的权值
      $$\beta_t=\epsilon_t/(1-\epsilon_t)$$
   4. 更新每个样本的权重：  
      <b><font color=CornflowerBlue>正确</font></b> 分类 🔽 
-     $$W_{new}=W_{old}\beta_t$$
+     $$W_{new}=W_{old}*\beta_t$$
      <b><font color=HotPink>错误</font></b> 分类 🔼
      $$W_{new}=W_{old}$$    
   5. 归一化权重（权重和 =1）;
