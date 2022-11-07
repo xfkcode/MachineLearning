@@ -2,8 +2,8 @@
 ***Amazon*** **用户评论质量**  
 ***reviewerID*** 用户ID 👽
 ***asin*** 商品ID 👔
-***reviewText*** 评论 💬  
-***overall*** 商品评分 💯
+***reviewText*** 评论 💬
+***overall*** 商品评分 💯  
 ***votes_up*** 评论点赞数 💚
 ***votes_all*** 评论总评价数 🗳️
 ***label*** 评论质量 ✔️❌
