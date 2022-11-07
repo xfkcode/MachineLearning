@@ -66,19 +66,23 @@ $w_i$ 对应 $a_i$ 的权值
   - $T$ 轮迭代，在每轮迭代后增大错误分类样本的权重  
     <b><font color=CornflowerBlue>更关注“难”样本</font></b>
 ### ***AdaBoost Algorithm***🧠
-- 初始给每个样本相等权重为 $1/N$;
+- 初始给每个样本相等权重为 $1/N$ ;
 - ♻️**For** $t=1,2,\ldots,T$ **Do**
-  1. 生成一个假设 $C_t$;
-  2. 计算错误率 $\epsilon_t$:  
+  1. 生成一个假设 $C_t$ ;
+  2. 计算错误率 $\epsilon_t$ :  
      $\epsilon_t$ = 所有错误分类样本权重和    
-  3. $\alpha_t=\frac{1}{2}\ln{\frac{1-\epsilon_t}{\epsilon_t}}$
+  3. 计算 $\alpha_t$ :  
+     $$\alpha_t=\frac{1}{2}\ln{\frac{1-\epsilon_t}{\epsilon_t}}$$
   4. 更新每个样本的权重：  
-     正确 分类：$W_{\text{new}} = W_{\text{old}}*e^{-\alpha_t}$   
-     &emsp;&emsp;**if** $\epsilon_t<0.5$ 🔽, $\epsilon_t>0.5$ 🔼  
-     
-     错误 分类：$W_{new}=W_{old}*e^{\alpha_t}$  
-     &emsp;&emsp;**if** $\epsilon_t<0.5$ 🔼, $\epsilon_t>0.5$ 🔽  
-  5. 归一化权重（权重和=1）;
+     <b><font color=CornflowerBlue>正确</font></b> 分类  
+     **if** $\epsilon_t<0.5$ 🔽, $\epsilon_t>0.5$ 🔼
+     $$W_{new} = W_{old}*e^{-\alpha_t}$$   
+       
+     <b><font color=HotPink>错误</font></b> 分类  
+     **if** $\epsilon_t<0.5$ 🔼, $\epsilon_t>0.5$ 🔽
+     $$W_{new}=W_{old}*e^{\alpha_t}$$     
+       
+  5. 归一化权重（权重和 =1）;
 - 🕹️融合所有假设 $C_t$, 各自投票权重为 $\alpha_t$ 
 
 ### ***AdaBoostM1 Algorithm***🧠
@@ -88,9 +92,12 @@ $w_i$ 对应 $a_i$ 的权值
   2. 计算错误率 $\epsilon_t$:  
      $\epsilon_t$ = 所有错误分类样本权重和  
      if $\epsilon_t$ > *0.5*, 则退出循环⚠️  
-  3. $\beta_t=\epsilon_t/(1-\epsilon_t)$
+  3. 计算 $\beta_t$
+     $$\beta_t=\epsilon_t/(1-\epsilon_t)$$
   4. 更新每个样本的权重：  
-     正确 分类：$W_{new}=W_{old}\beta_t$  🔽  
-     错误 分类：$W_{new}=W_{old}$  🔼  
+     <b><font color=CornflowerBlue>正确</font></b> 分类: 🔽 
+     $$W_{new}=W_{old}\beta_t$$
+     <b><font color=HotPink>错误</font></b> 分类: 🔼
+     $$W_{new}=W_{old}$$    
   5. 归一化权重（权重和=1）;
 - 🕹️融合所有假设 $C_t$, 各自投票权重为 $\log{(1/\beta_t)}$
