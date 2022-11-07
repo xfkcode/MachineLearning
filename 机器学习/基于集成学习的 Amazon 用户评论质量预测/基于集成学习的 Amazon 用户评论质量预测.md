@@ -8,27 +8,27 @@
 ***votes_all*** 评论总评价数 🗳️
 ***label*** 评论质量 ✔️❌
 
-## **集成学习** ***(Ensemble Learning)***  
-***'Three heads are better than one.'***
-- 基本想法
+## 📮**集成学习** ***(Ensemble Learning)***  
+***'Three heads are better than one.'*** 🤔
+- 基本想法💡
   - 有时一个单个分类器表现不好，但是融合表现不错
   - 算法池中的每一个学习器都有它的权重
   - 当需要对一个新的实例作预测时
     - 每个学习器作出自己的预测
     - 然后主算法把这些结果根据权值合并起来，作出最终预测
-- 集成策略
-  - 平均
+- 集成策略🎲
+  - 平均🎰
     - 简单平均
     - 加权平均
-  - 投票
+  - 投票🗳️
     - 多数投票法
     - 加权投票法
-  - 学习
+  - 学习📗
     - 加权多数
     - 堆叠 ***(Stacking)***  
-      层次融合，基学习器的输出作为次学习器的输入
+      🧱层次融合，基学习器的输出作为次学习器的输入
 
-## **加权多数** ***(Weighted Majority)***
+## ⚖️**加权多数** ***(Weighted Majority)***
 ### ***Weighted Majority Algorithm***🧠
 $a_i$ 是算法池中第 $i$ 个预测算法，每个算法对输入 $X$ 有二值输出 $\lbrace 0,1\rbrace$  
 $w_i$ 对应 $a_i$ 的权值
@@ -47,7 +47,7 @@ $w_i$ 对应 $a_i$ 的权值
       ( $\beta \in [0,1)$惩罚系数 )  
       $\beta=0$ 时是作用在 $A$ 上的 <i><b><font color=Gold>Halving Algorithm</font></b></i>
 
-## ***Bagging***
+## 🥡***Bagging***
 - **Bagging** = **B**ootstrap **agg**rega**ting**
 - Bootstrap asmpling (拔靴法/自举法采样)
   - 给定集合 $D$ ,含有 $m$ 训练样本
@@ -57,7 +57,7 @@ $w_i$ 对应 $a_i$ 的权值
 1. 从 $S$ 中拔靴采样产生 $D_t$
 2. 在 $D_t$ 上训练一个分类器 $H_t$
 
-分类一个新的样本 $x\in X$ 时，通过对 $H_t$ 多数投票 [🗳️]（等权重）
+🥽分类一个新的样本 $x\in X$ 时，通过对 $H_t$ 多数投票 [🗳️]（等权重）
 ```python
 class Bagging():
     def __init__(self,baseClassifier='DT', numIt=50) -> None:
@@ -109,13 +109,13 @@ class Bagging():
             predictions += np.array(y_predict)
         return [1 if i>=self.numIt/2 else 0  for i in predictions]
 ```
-## ***Boosting***
+## 🥾***Boosting***
 - 从失败中学习
 - 基本想法
   - 给每个样本一个权值
   - $T$ 轮迭代，在每轮迭代后增大错误分类样本的权重  
     <b><font color=Gold>更关注“难”样本</font></b>
-### ***AdaBoost Algorithm***🧠
+### 1️⃣***AdaBoost Algorithm***🧠
 - 初始给每个样本相等权重为 $1/N$ ;
 - ♻️**For** $t=1,2,\ldots,T$ **Do**
   1. 生成一个假设 $C_t$ ;
@@ -133,7 +133,7 @@ class Bagging():
      $$W_{new}=W_{old}*e^{\alpha_t}$$     
        
   5. 归一化权重（权重和 =1）;
-- 融合所有假设 $C_t$ , 各自投票权重为 $\alpha_t$ 
+- 💣融合所有假设 $C_t$ , 各自投票权重为 $\alpha_t$ 
 ```python
 class AdaBoost():
     def __init__(self,baseClassifier='DT',numIt=10) -> None:
@@ -202,7 +202,7 @@ class AdaBoost():
             aggClass += self.alphas[time] * y_predict
         return np.sign(aggClass)
 ```
-### ***AdaBoostM1 Algorithm***🧠
+### 2️⃣***AdaBoostM1 Algorithm***🧠
 - 初始给每个样本相等权重为 $1/N$ ;
 - ♻️**For** $t=1,2,\ldots,T$ **Do**
   1. 生成一个假设 $C_t$ ;
@@ -217,7 +217,7 @@ class AdaBoost():
      <b><font color=HotPink>错误</font></b> 分类 🔼
      $$W_{new}=W_{old}$$    
   5. 归一化权重（权重和 =1）;
-- 融合所有假设 $C_t$ , 各自投票权重为 $\log{(1/\beta_t)}$
+- 💣融合所有假设 $C_t$ , 各自投票权重为 $\log{(1/\beta_t)}$
 ```python
 class AdaBoostM1():
     def __init__(self,baseClassifier='DT',numIt=10) -> None:
@@ -308,13 +308,13 @@ df.head(3) # 显示前三条数据
 df.info() # 显示数据基本信息,可检查是否有数据丢失
 df.describe() # 显示数据统计摘要
 ```
-## 实验方案 + 特征工程
+## 🧪实验方案 + 特征工程
 🧰***sklearn*** 文本向量化工具  
 - [***sklearn.feature_extraction.text.CountVectorizer***](https://github.com/xfkcode/MachineLearning/blob/main/python%E5%B7%A5%E5%85%B7/sklearn/sklearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01.ipynb)  
   将文本文档集合转换为计数矩阵。
 - [***sklearn.feature_extraction.text.TfidfVectorizer***](https://github.com/xfkcode/MachineLearning/blob/main/python%E5%B7%A5%E5%85%B7/sklearn/sklearn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02.ipynb)  
   将文档集合转换为TF-IDF功能矩阵。
-### ***Test-1***
+### ***Test-1***⚗️
 数据🧫
 - 使用训练集前 ***2000*** 条数据作为 *Test-1* 全部数据进行数据划分测试  
 
@@ -327,7 +327,7 @@ df.describe() # 显示数据统计摘要
 2. 数据划分✂️   
    训练集 : 测试集 ***(8:2)***
 
-### ***Test-2***
+### ***Test-2***⚗️
 数据🧫 
 - 使用训练集前 ***2000*** 条数据作为 *Test-2* 训练集数据  
 - 使用测试集前 ***200*** 条数据作为 *Test-2* 测试集数据  
@@ -340,7 +340,7 @@ df.describe() # 显示数据统计摘要
    - **训练集数据** 构建词表，实现文本向量化
 2. 构建训练集、测试集数据
 
-## 模型构建
+## 🕹️模型构建
 * Bagging + SVM
 * Bagging + 决策树
 * AdaBoost + SVM
@@ -361,15 +361,14 @@ adBt_DT = AdaBoostClassifier(DecisionTreeClassifier(max_depth=3), algorithm='SAM
 - 基分类器SVM： `SVC()`
 - 基分类器DT：  &emsp;`DecisionTreeClassifier()`
 
-[***Bagging***]()\
-[***AdaBoost***]()\
-[***AdaBoostM1***]()
+[🔗***Bagging***](##🥡***Bagging***)👈 
+[🔗***Boosting***](##🥾***Boosting***)👈
 ```python
 clfbagging=Bagging().fit(x_train,y_train)
 clfAdaBoost=AdaBoost().fit(x_train,y_train)
 clfAdaBoostM1=AdaBoostM1().fit(x_train,y_train)
 ```
-## 对比 ***Accuracy*** 模型性能💯
+## 💯对比 ***Accuracy*** 模型性能
 统计对比模型准确率  
 *Test-1* 🔬
 - [x] ***Sklearn-models***
@@ -388,19 +387,20 @@ AdaBoost + SVM Accuracy : 0.77
 AdaBoostM1 + DT Accuracy : 0.675
 AdaBoostM1 + SVM Accuracy : 0.77
 ```
-## 对比 ***ROC/AUC*** 模型性能📈
-画出了模型ROC曲线  
-计算了AUC指标  
+## 📈对比 ***ROC/AUC*** 模型性能
+📐画出了模型 ***ROC*** 曲线 [🔗](https://github.com/xfkcode/MachineLearning/blob/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9A%84%20Amazon%20%E7%94%A8%E6%88%B7%E8%AF%84%E8%AE%BA%E8%B4%A8%E9%87%8F%E9%A2%84%E6%B5%8B/%E5%9F%BA%E4%BA%8E%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9A%84%20Amazon%20%E7%94%A8%E6%88%B7%E8%AF%84%E8%AE%BA%E8%B4%A8%E9%87%8F%E9%A2%84%E6%B5%8B.ipynb)  
+💻计算了 ***AUC*** 指标  
 *Test-1* 🔬
 - ***sklearn-models***  
   ***sklearn*** 模型使用 `proba` 比 `predict` 效果好  
   ***AUC*** 指标均超过 ***0.6***
 - ***self-models***  
 自主实现模型效果不好  
-原因：
-AdaBoost/AdaBoostM1算法每次迭代后基分类器错误率会升高，并保持在0.5左右
+👉**原因**：
+*AdaBoost/AdaBoostM1* 算法每次迭代后基分类器错误率会升高，并保持在 ***0.5*** 左右
 会使得权重更新无法正常运行，基分类器样本加权训练结果出现偏差。  
-目前还没有找出解决办法。后续会继续探索更新。
+
+⭕目前还没有找出解决办法，后续会继续探索更新🤯
 
 ---
 > ✍️ [邢福凯 (xfkcode@github)](https://github.com/xfkcode)  
