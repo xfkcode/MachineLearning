@@ -41,7 +41,7 @@ $w_i$ 对应 $a_i$ 的权值
       **else** :  
       &emsp; $q_1 \leftarrow q_1 + w_i$ 
   - 如果 $q_0>q_1$ ,则预测 $c(x)=0$ ,否则预测 $c(x)=1$  
-    ($q_0=q_1$ 时取任意值)
+    ( $q_0=q_1$ 时取任意值 )
   - 对每个 $a_i\in A$
     - 如果 $a_i(x)=c(x)$ ,那么 $w_i \leftarrow \beta w_i$  
       ( $\beta \in [0,1)$惩罚系数 )  
