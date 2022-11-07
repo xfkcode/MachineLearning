@@ -296,7 +296,7 @@ class AdaBoostM1():
   
   **测试集标签**："./data/" 📂路径下 *groundTruth.csv* 📝文件  
   - *Id，Expected*  
-[***dataDownload*****链接**]()👈
+[***dataDownload*****链接**](https://github.com/xfkcode/MachineLearning/blob/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%9F%BA%E4%BA%8E%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E7%9A%84%20Amazon%20%E7%94%A8%E6%88%B7%E8%AF%84%E8%AE%BA%E8%B4%A8%E9%87%8F%E9%A2%84%E6%B5%8B/data.zip)👈
 
 [📢]：测试集标签分离文件存储，*Id* 与测试集特征样本一一对应，*Expected* 即 *label*。
 ```python
@@ -341,12 +341,12 @@ df.describe() # 显示数据统计摘要
 2. 构建训练集、测试集数据
 
 ## 🕹️模型构建
-* Bagging + SVM
-* Bagging + 决策树
-* AdaBoost + SVM
-* AdaBoost + 决策树
-* AdaBoost.M1 + SVM
-* AdaBoost.M1 + 决策树
+* ***Bagging + SVM***
+* ***Bagging + 决策树***
+* ***AdaBoost + SVM***
+* ***AdaBoost + 决策树***
+* ***AdaBoost.M1 + SVM***
+* ***AdaBoost.M1 + 决策树***
 ### 🧰***sklearn*** 实现
 - 基分类器SVM： `SVC(C=200,kernel='rbf')`
 - 基分类器DT：  &emsp;`DecisionTreeClassifier(max_depth=3)`
