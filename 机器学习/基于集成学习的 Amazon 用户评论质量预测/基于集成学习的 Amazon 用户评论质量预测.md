@@ -45,7 +45,7 @@ $w_i$ 对应 $a_i$ 的权值
   - 对每个 $a_i\in A$
     - 如果 $a_i(x)=c(x)$ ,那么 $w_i \leftarrow \beta w_i$  
       ( $\beta \in [0,1)$惩罚系数 )  
-      $\beta=0$ 时是作用在 $A$ 上的 <i><b><font color=HotPink>Halving Algorithm</font></b></i>
+      $\beta=0$ 时是作用在 $A$ 上的 <i><b><font color=Gold>Halving Algorithm</font></b></i>
 
 ## ***Bagging***
 - **Bagging** = **B**ootstrap **agg**rega**ting**
@@ -64,7 +64,7 @@ $w_i$ 对应 $a_i$ 的权值
 - 基本想法
   - 给每个样本一个权值
   - $T$ 轮迭代，在每轮迭代后增大错误分类样本的权重  
-    <b><font color=CornflowerBlue>更关注“难”样本</font></b>
+    <b><font color=Gold>更关注“难”样本</font></b>
 ### ***AdaBoost Algorithm***🧠
 - 初始给每个样本相等权重为 $1/N$ ;
 - ♻️**For** $t=1,2,\ldots,T$ **Do**
