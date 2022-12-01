@@ -123,7 +123,7 @@ Name: paper, Length: 398, dtype: object
   🎪***TF-TDF***  
   (*Term Frequency-Inverse Document Frequency*, 词频-逆文本频率)  
   一个词语在一篇文章中出现次数越多, 同时在所有文档中出现次数越少, 越能够代表该文章  
-  $📌TF-IDF(x)=TF(x)*IDF(x)📌$
+  $TF-IDF(x)=TF(x)*IDF(x)$
   - ***TF***  
   $TF(x)=\frac{\text{Number of the term appears in the doc}}{\text{Total number of words in the doc}}$
   - ***IDF***  
